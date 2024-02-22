@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
+
 app = Flask(__name__)
+
 @app.route('/')
 def hello_world():
-  return "Hello, kris!"
-print(__name__ )
+  return render_template('home.html')
+  
 if __name__ == '__main__':
-  print("im in side the now")
   app.run(host='0.0.0.0', debug=True)
